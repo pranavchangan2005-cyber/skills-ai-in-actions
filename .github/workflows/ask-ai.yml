@@ -16,6 +16,7 @@ jobs:
         uses: actions/ai-inference@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          model: openai/gpt-4o
           prompt: |
             Give me a programming joke.
 
@@ -26,3 +27,5 @@ jobs:
           echo "## 🤖 AI Response" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           printf '%s\n' "$AI_RESPONSE" >> "$GITHUB_STEP_SUMMARY"
+
+       
